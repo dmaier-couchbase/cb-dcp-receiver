@@ -139,7 +139,10 @@ public class Receiver {
         connected = true;
     }
     
-    
+    /**
+     * Open the DCP streams and handle them by using the passed handler
+     * 
+     */
     public void stream()
     {
         core.send(new OpenConnectionRequest(STREAM_NAME, bucket))
@@ -166,6 +169,7 @@ public class Receiver {
     }
     
     /**
+     *  Request the streams for all vBuckets
      * 
      * @return 
      */
@@ -176,11 +180,5 @@ public class Receiver {
                 .flatMap(vBucket -> core.<StreamRequestResponse>send(new StreamRequestRequest(vBucket.shortValue(), bucket))) //Request a stream
                 .map(response -> response.stream()) //Return the stream as Observable of DCPRequest
         );               
-    }
-
-    public ClusterFacade getCore() {
-        return core;
-    }
-   
-    
+    }  
 }
