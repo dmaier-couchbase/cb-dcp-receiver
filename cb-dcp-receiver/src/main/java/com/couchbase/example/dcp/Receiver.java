@@ -154,7 +154,7 @@ public class Receiver {
     }
     
     /**
-     * Retrieve the bucket partion size by receiving the Bucket configuration from the cluster configuration
+     * Retrieve the number of vBuckets of the Bucket
      * @return 
      */
     private Observable<Integer> numOfVBuckets()
