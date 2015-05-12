@@ -245,7 +245,7 @@ import com.couchbase.client.core.message.dcp.MutationMessage;
  * 
  * @author David Maier <david.maier at couchbase.com>
  */
-public class LogHandler extends AHandler {
+public class LogHandler implements IHandler {
 
     @Override
     public void handle(DCPRequest dcp) {
