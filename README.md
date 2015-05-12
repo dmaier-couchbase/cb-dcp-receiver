@@ -260,3 +260,41 @@ public class LogHandler extends AHandler {
     }
 }
 ```
+* Test case
+```
+package com.couchbase.example.dcp;
+
+import com.couchbase.example.dcp.handler.LogHandler;
+import org.junit.BeforeClass;
+import org.junit.Test;
+import static org.junit.Assert.*;
+
+/**
+ * Test case
+ *
+ * @author David Maier <david.maier at couchbase.com>
+ */
+public class ReceiverTest {
+    
+    
+    private static Receiver r;
+    
+    public ReceiverTest() {
+    
+        //Make sure that DCP is usable
+        System.setProperty("com.couchbase.dcpEnabled", "true");
+        r = new Receiver(new String[]{"192.168.7.160"}, "test", "test", new LogHandler());
+    }
+    
+    @BeforeClass
+    public static void setUpClass() {
+    }
+
+    @Test
+    public void testReceiveStream() {
+
+        r.connect();
+        r.stream();
+    }
+}
+```
