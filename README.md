@@ -232,4 +232,31 @@ public class Receiver {
     }  
 }
 ```
+* Log-Handler
 
+```
+package com.couchbase.example.dcp.handler;
+
+import com.couchbase.client.core.message.dcp.DCPRequest;
+import com.couchbase.client.core.message.dcp.MutationMessage;
+
+/**
+ * A logging DCP handler
+ * 
+ * @author David Maier <david.maier at couchbase.com>
+ */
+public class LogHandler extends AHandler {
+
+    @Override
+    public void handle(DCPRequest dcp) {
+       
+        if (dcp instanceof MutationMessage)
+        {
+            MutationMessage msg = (MutationMessage) dcp;
+         
+            System.out.println("key = " +  msg.key() + ", cas = " +  msg.cas());      
+        }      
+        
+    }
+}
+```
