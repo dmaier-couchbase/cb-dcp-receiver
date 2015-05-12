@@ -30,3 +30,24 @@ public class ReceiverEnv extends DefaultCoreEnvironment {
     }    
 }
 ```
+
+* A Core Environment Builder
+
+```
+package com.couchbase.example.dcp;
+
+import com.couchbase.client.core.env.DefaultCoreEnvironment;
+
+/**
+ * The environment builder
+ * 
+ * Let's just use the DefaultCoreEnvironment.Builder in this case
+ * 
+ * @author David Maier <david.maier at couchbase.com>
+ */
+public class ReceiverEnvBuilder extends DefaultCoreEnvironment.Builder {
+    
+
+}
+```
+
