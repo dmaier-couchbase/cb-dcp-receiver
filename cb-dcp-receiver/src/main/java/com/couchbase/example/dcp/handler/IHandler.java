@@ -13,21 +13,13 @@ import com.couchbase.client.core.message.dcp.DCPRequest;
  * 
  * @author David Maier <david.maier at couchbase.com>
  */
-public abstract class AHandler {
+public interface IHandler {
 
-
-    /**
-     * The default constructor
-     *
-     */
-    public AHandler() {
-
-    }
     
     /**
      * Handles the dcp request
      * 
      * @param dcp 
      */
-    abstract public void handle(DCPRequest dcp);    
+    public void handle(DCPRequest dcp);    
 }
