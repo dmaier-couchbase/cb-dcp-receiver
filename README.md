@@ -68,7 +68,7 @@ import com.couchbase.client.core.message.dcp.OpenConnectionRequest;
 import com.couchbase.client.core.message.dcp.StreamRequestRequest;
 import com.couchbase.client.core.message.dcp.StreamRequestResponse;
 import com.couchbase.client.core.message.kv.GetBucketConfigRequest;
-import com.couchbase.example.dcp.handler.AHandler;
+import com.couchbase.example.dcp.handler.IHandler;
 import java.util.concurrent.TimeUnit;
 import java.util.function.Consumer;
 import java.util.logging.Logger;
@@ -110,7 +110,7 @@ public class Receiver {
      */
     private final ClusterFacade core;
     
-    
+    I
     /**
      * The nodes to connect to during the bootstrap phase
      */
@@ -135,7 +135,7 @@ public class Receiver {
     /**
      * To handle the DCP result
      */
-    private AHandler handler;
+    private IHandler handler;
     
     /**
      * Initialize the receiver
@@ -143,7 +143,7 @@ public class Receiver {
      * @param bucket
      * @param password
      */
-    public Receiver(String[] nodes, String bucket, String password, AHandler handler) {
+    public Receiver(String[] nodes, String bucket, String password, IHandler handler) {
                 
         this(nodes, bucket, password, handler, new ReceiverEnv());
 
@@ -157,7 +157,7 @@ public class Receiver {
      * @param env 
      * @param password
      */
-    public Receiver(String[] nodes, String bucket, String password, AHandler handler, ReceiverEnv env) {
+    public Receiver(String[] nodes, String bucket, String password, IHandler handler, ReceiverEnv env) {
         
         this.env = env;
         this.core = new CouchbaseCore(env);
