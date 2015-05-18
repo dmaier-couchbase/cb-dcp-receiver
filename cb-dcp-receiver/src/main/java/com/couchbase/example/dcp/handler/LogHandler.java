@@ -23,7 +23,7 @@ public class LogHandler implements IHandler {
         {
             MutationMessage msg = (MutationMessage) dcp;
          
-            System.out.println("key = " +  msg.key() + ", cas = " +  msg.cas());      
+            System.out.println("key = " +  msg.key() + ", cas = " +  msg.cas());
         }      
         
     }

@@ -17,10 +17,8 @@ import com.couchbase.client.core.message.dcp.DCPRequest;
 import com.couchbase.client.core.message.dcp.OpenConnectionRequest;
 import com.couchbase.client.core.message.dcp.StreamRequestRequest;
 import com.couchbase.client.core.message.dcp.StreamRequestResponse;
-import com.couchbase.client.core.message.kv.GetBucketConfigRequest;
 import com.couchbase.example.dcp.handler.IHandler;
 import java.util.concurrent.TimeUnit;
-import java.util.function.Consumer;
 import java.util.logging.Logger;
 import rx.Observable;
 
