@@ -14,27 +14,16 @@
  * limitations under the License.
  */
 
+
 package com.couchbase.example.dcp;
 
-import com.couchbase.client.core.env.DefaultCoreEnvironment;
-
 /**
- * The environment of the receiver
- * 
- * Let's just use the DefaultCoreEnvirnment in this case
- * 
+ *
  * @author David Maier <david.maier at couchbase.com>
  */
-public class ReceiverEnv extends DefaultCoreEnvironment {
+public interface TestConstants {
     
-    public ReceiverEnv()
-    {  
-        super(new ReceiverEnvBuilder());
-    }
-    
-    public ReceiverEnv(Builder b)
-    {
-        super(b);
-        
-    }    
+    public final static String HOST = System.getProperty("cb.host");
+    public final static String BUCKET = System.getProperty("cb.bucket");
+    public final static String PWD = System.getProperty("cb.pwd");
 }
