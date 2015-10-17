@@ -20,10 +20,9 @@ import com.couchbase.client.core.message.dcp.DCPRequest;
 import com.couchbase.client.core.message.dcp.RemoveMessage;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-//import com.couchbase.client.core.message.dcp.MutationMessage;
 
 /**
- * A logging DCP handler
+ * A logging DCP handler for remove messages
  * 
  * @author David Maier <david.maier at couchbase.com>
  */

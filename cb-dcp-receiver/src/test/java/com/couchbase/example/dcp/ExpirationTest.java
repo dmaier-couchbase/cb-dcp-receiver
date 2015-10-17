@@ -86,6 +86,7 @@ public class ExpirationTest {
      * (3) You should see the line 'INFORMATION: So far 1.000 documents were deleted.'
      * in the output
      * 
+     * @throws java.lang.Exception
      */
     @Test
     public void testReceiveDeletionStream() throws Exception {
@@ -103,10 +104,9 @@ public class ExpirationTest {
         }
         
         Observable.from(docs).flatMap(d -> bucket.upsert(d)).subscribe(
-        
                 res -> LOG.log(Level.INFO, "Created document with id {0}", res.id())
         );
-        
+
         //Wait a moment before streaming
         Thread.sleep(5000);
         
